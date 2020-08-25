@@ -60,7 +60,7 @@ class TodoController extends Controller
         // dd($this->todo->fill($input));
         $input['user_id'] = Auth::id();  // 追記
         $this->todo->fill($input)->save();
-        return redirect()->to('todo');
+        return redirect()->to('todo.index');
         // redirectがGET送信
     }
 
@@ -106,7 +106,7 @@ class TodoController extends Controller
         // dd($this->todo->find($id));
         // dd($this->todo->find($id)->fill($input));
         $this->todo->find($id)->fill($input)->save();
-        return redirect()->to('todo');
+        return redirect()->to('todo.index');
     }
 
     /**
@@ -119,6 +119,6 @@ class TodoController extends Controller
     {
         // dd($this->todo->find($id)->delete());
         $this->todo->find($id)->delete();
-        return redirect()->to('todo');
+        return redirect()->to('todo.index');
     }
 }
