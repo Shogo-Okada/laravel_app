@@ -25,6 +25,7 @@ class TodoController extends Controller
      */
     public function index()
     {
+        // dd($this->todo->where('user_id', 1)->toSql());
         $todos = $this->todo->getByUserId(Auth::id());
         // dd($todos);   //インスタンス化したCollectionクラス
         // todos tableから全てのレコードをコレクションラッピングして返す
